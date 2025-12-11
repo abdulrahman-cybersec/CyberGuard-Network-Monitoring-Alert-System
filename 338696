@@ -1,0 +1,25 @@
+# Project Report — CyberGuard N-MAS
+
+**Author:** Abdulrahman Khaled Mohammed Sagheer Hijjam
+
+## Summary
+CyberGuard is a network monitoring and alert simulation system developed as a student project to demonstrate practical skills in cybersecurity and network awareness. The project focuses on safe simulation (no active scanning) and full-stack prototyping.
+
+## Objectives
+- Implement a dashboard to visualize network metrics.
+- Create a simulator to generate realistic demonstration data.
+- Define simple alerting rules and display them clearly for reviewers.
+
+## Implementation
+- Backend: Flask application serving JSON from a simulator file.
+- Simulator: Python script generating synthetic metrics and alerts.
+- Frontend: HTML/CSS/JS dashboard that polls the backend for updates.
+
+## How to run
+1. Run the simulator: `python simulator/simulator.py`  
+2. Run the dashboard: `flask run`  
+3. Open `http://127.0.0.1:5000`
+
+## Ethical note
+The simulator only writes local JSON files. It does not probe or scan network devices. This ensures compliance with ethical guidelines for student projects.
+
