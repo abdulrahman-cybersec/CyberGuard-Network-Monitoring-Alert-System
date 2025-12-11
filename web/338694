@@ -1,0 +1,21 @@
+async function fetchData(){
+  try{
+    const r = await fetch('/api/data');
+    const data = await r.json();
+    document.getElementById('traffic').textContent = data.metrics.traffic || '-';
+    document.getElementById('latency').textContent = data.metrics.latency || '-';
+    document.getElementById('loss').textContent = data.metrics.loss || '-';
+    const alerts = data.alerts || [];
+    const ul = document.getElementById('alertsList');
+    ul.innerHTML = '';
+    alerts.forEach(a=>{
+      const li = document.createElement('li');
+      li.textContent = `[${a.level}] ${a.message}`;
+      ul.appendChild(li);
+    });
+  }catch(e){
+    console.error(e);
+  }
+}
+setInterval(fetchData, 1500);
+fetchData();

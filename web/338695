@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CyberGuard N-MAS Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header><h1>CyberGuard — Network Monitoring & Alert System</h1>
+  <p class="muted">Author: Abdulrahman Khaled Mohammed Sagheer Hijjam</p></header>
+  <main class="container">
+    <section class="cards">
+      <div class="card"><h3>Traffic (Mbps)</h3><div id="traffic" class="metric">-</div></div>
+      <div class="card"><h3>Latency (ms)</h3><div id="latency" class="metric">-</div></div>
+      <div class="card"><h3>Packet Loss (%)</h3><div id="loss" class="metric">-</div></div>
+    </section>
+    <section class="alerts">
+      <h2>Alerts</h2>
+      <ul id="alertsList"></ul>
+    </section>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
