@@ -1,0 +1,9 @@
+{
+  "metrics": {
+    "traffic": 123.45,
+    "latency": 23.4,
+    "loss": 0.12
+  },
+  "alerts": [],
+  "ts": 0
+}
