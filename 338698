@@ -1,0 +1,27 @@
+# Simulator: generates local JSON file with fake metrics and alerts for demo
+import json, time, random, os
+
+OUT = os.path.join(os.path.dirname(__file__), 'latest_events.json')
+
+def generate():
+    metrics = {
+        "traffic": round(random.uniform(10, 400), 2),   # Mbps
+        "latency": round(random.uniform(1, 200), 2),    # ms
+        "loss": round(random.uniform(0, 5), 2)          # %
+    }
+    alerts = []
+    if metrics['traffic'] > 300:
+        alerts.append({"level":"HIGH","message":"Traffic spike detected"})
+    if metrics['latency'] > 150:
+        alerts.append({"level":"CRITICAL","message":"High latency detected"})
+    if metrics['loss'] > 2.5:
+        alerts.append({"level":"WARNING","message":"Packet loss above threshold"})
+    data = {"metrics":metrics,"alerts":alerts,"ts":time.time()}
+    with open(OUT,'w',encoding='utf-8') as f:
+        json.dump(data,f,indent=2)
+    print('Wrote', OUT)
+
+if __name__=='__main__':
+    while True:
+        generate()
+        time.sleep(2)
