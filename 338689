@@ -1,0 +1,55 @@
+# CyberGuard — Network Monitoring & Alert System (N-MAS)
+**Author:** Abdulrahman Khaled Mohammed Sagheer Hijjam
+
+## Project Summary
+CyberGuard (N-MAS) is a safe, educational network monitoring and alert simulation system designed for learning and portfolio demonstration. 
+The system includes:
+- A web dashboard to visualize simulated network metrics and alerts.
+- A simulation script that generates synthetic network events and log data (no scanning of external systems).
+- Clear documentation and a project report suitable for scholarship applications.
+
+**Important:** This project performs local simulation only. It does NOT scan or interact with real networks or devices. It is fully ethical and safe for academic use.
+
+## Features
+- Real-time dashboard (Flask) displaying simulated metrics (traffic, packet loss, latency).
+- Alerting rules (threshold-based) that trigger visual alerts.
+- Simulator to generate sample logs and events for demo.
+- Clean frontend (HTML/CSS/JS) suitable for presentation.
+- Comprehensive README and project report for scholarship submissions.
+
+## Quick start (run locally)
+1. Install Python 3.8+
+2. Create and activate virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate   # Linux/macOS
+   venv\Scripts\activate    # Windows PowerShell
+   ```
+3. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run simulator in a terminal (optional, in background):
+   ```bash
+   python simulator/simulator.py
+   ```
+5. Run the web dashboard:
+   ```bash
+   export FLASK_APP=app.py
+   flask run
+   ```
+   Then open http://127.0.0.1:5000 in your browser.
+
+## Files in this repository
+- `app.py` — Flask dashboard server (reads simulated data file)
+- `simulator/simulator.py` — Generates simulated network events/logs
+- `web/` — Frontend files (templates, static css/js)
+- `docs/project_report.md` — Project report for scholarship
+- `README.md` — This file
+- `requirements.txt` — Python dependencies
+
+## Why this is strong for scholarships
+- Demonstrates practical understanding of network metrics and alerting logic.
+- Shows ability to build full-stack prototype (backend + frontend + data pipeline).
+- Ethical, safe, and easily reproducible by reviewers.
+
